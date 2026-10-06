@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@custom-variant light (&:where(.light, .light *));
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-display: 'Syne', sans-serif;
+    --font-editorial: 'Cinzel', serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --bg-main: #0b0f17;
+    --text-main: #f1f5f9;
+  }
+
+  html.light {
+    --bg-main: #f8fafc;
+    --text-main: #0f172a;
+    color-scheme: light;
+  }
+
+  html.dark {
+    --bg-main: #0b0f17;
+    --text-main: #f1f5f9;
+    color-scheme: dark;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .font-editorial {
+    font-family: var(--font-editorial);
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom minimal scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #252e3e;
+  border-radius: 3px;
+}
+
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+/* Hide scrollbar for category and horizontal pill bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #38bdf8;
+}
+
+/* Anime scanline / paper texture subtle overlay */
+.anime-grid-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+html.light .anime-grid-bg {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+.kanji-watermark {
+  user-select: none;
+  pointer-events: none;
+  font-family: 'Cinzel', serif;
+}
+
+/* ==========================================================================
+   Light Mode High-Readability Editorial Theme Overrides
+   ========================================================================== */
+html.light header {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-color: #e2e8f0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+}
+
+html.light footer {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+html.light .sticky.top-16 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+
+html.light article {
+  color: #1e293b !important;
+}
+
+html.light .bg-slate-900,
+html.light .bg-slate-950,
+html.light .bg-slate-900\/60,
+html.light .bg-slate-900\/50,
+html.light .bg-slate-900\/80,
+html.light .bg-slate-950\/60,
+html.light .bg-slate-950\/70,
+html.light .bg-slate-950\/80,
+html.light .bg-slate-950\/30 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.light .border-slate-800,
+html.light .border-slate-800\/80,
+html.light .border-slate-800\/70,
+html.light .border-slate-700,
+html.light .border-slate-700\/70,
+html.light .border-slate-900 {
+  border-color: #e2e8f0 !important;
+}
+
+html.light .hover\:bg-slate-800\/80:hover,
+html.light .hover\:bg-slate-800:hover,
+html.light .hover\:bg-slate-700:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+html.light .hover\:border-slate-700:hover,
+html.light .hover\:border-slate-600:hover {
+  border-color: #cbd5e1 !important;
+}
+
+html.light .text-slate-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html.light .text-slate-300 {
+  color: #334155 !important;
+}
+
+html.light .text-slate-400 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.light .text-slate-600 {
+  color: #94a3b8 !important;
+}
+
+html.light .text-slate-700 {
+  color: #cbd5e1 !important;
+}
+
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+html.light blockquote {
+  background-color: #f1f5f9 !important;
+  color: #1e293b !important;
+}
+
+

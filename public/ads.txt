@@ -1,0 +1,3 @@
+# Google AdSense ads.txt for animify.click
+# Publisher ID: pub-3141399498660167
+google.com, pub-3141399498660167, DIRECT, f08c47fec0942fa0

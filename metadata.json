@@ -1,0 +1,6 @@
+{
+  "name": "Animify Lifestyle – Modern Living, Wellness & Culture",
+  "description": "The premier lifestyle magazine for holistic wellness, sustainable fashion, mindful living, and modern cultural critiques on animify.click.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
